@@ -32,7 +32,7 @@ public class OrderData {
     @Column(nullable = false, columnDefinition = "CHAR(1)")
     private Character paymentMethod;
 
-    @Column(nullable = false, length = 200)
+    @Column(length = 200)
     private String additionalInfo;
 
     @OneToOne
