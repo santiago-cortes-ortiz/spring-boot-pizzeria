@@ -5,6 +5,7 @@ import com.jeisson.pizzeria.service.PizzaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +20,10 @@ public class PizzaController {
     @GetMapping
     public final ResponseEntity<List<PizzaData>> findAll() {
         return ResponseEntity.ok(this.pizzaService.findAll());
+    }
+
+    @GetMapping("/{id}")
+    public final ResponseEntity<PizzaData> findById(@PathVariable Integer id) {
+        return ResponseEntity.ok(this.pizzaService.findById(id));
     }
 }
