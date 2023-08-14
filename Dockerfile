@@ -15,7 +15,7 @@ COPY src ./src
 RUN ./gradlew build
 
 # Expone el puerto en el que se ejecuta la aplicación Spring Boot
-EXPOSE 8080
+EXPOSE 8081
 
 # Comando para ejecutar la aplicación Spring Boot cuando se inicie el contenedor
 CMD ["java", "-jar", "build/libs/your-spring-boot-app.jar"]
