@@ -1,4 +1,4 @@
-FROM gradle:latest AS builder
+FROM gradle:7.6 AS builder
 
 COPY build.gradle ./
 COPY src ./src
