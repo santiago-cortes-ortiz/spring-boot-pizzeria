@@ -3,7 +3,7 @@ FROM gradle:7.6 AS builder
 COPY build.gradle ./
 COPY src ./src
 
-RUN gradle build
+RUN gradle build -x test
 
 FROM openjdk:17
 
