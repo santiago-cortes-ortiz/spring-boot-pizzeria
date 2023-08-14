@@ -19,4 +19,8 @@ public class PizzaService {
     public PizzaData findById(Integer id) {
         return this.pizzaRepository.findById(id).orElse(null);
     }
+
+    public PizzaData save(PizzaData pizzaData) {
+        return this.pizzaRepository.save(pizzaData);
+    }
 }

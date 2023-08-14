@@ -69,3 +69,14 @@ VALUES
 (5, 2, 12, 0.5, 9.5),
 (6, 1, 11, 1, 23);
 ```
+## JSON for POSTMAN (POST)
+```
+{
+	"name": "Piñita",
+	"description": "piñita, Homemade Tomato Sauce & Mozzarella.",
+	"price": 15.0,
+	"vegetarian": false,
+	"vegan": false,
+	"available": true
+}
+```
