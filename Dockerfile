@@ -18,5 +18,5 @@ RUN ./gradlew build
 EXPOSE 8081
 
 # Comando para ejecutar la aplicación Spring Boot cuando se inicie el contenedor
-CMD ["java", "-jar", "build/libs/your-spring-boot-app.jar"]
+CMD ["java", "-jar", "build/libs/pizzeria-0.0.1-SNAPSHOT-plain.jar"]
 
