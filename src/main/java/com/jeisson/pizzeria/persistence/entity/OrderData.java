@@ -1,5 +1,6 @@
 package com.jeisson.pizzeria.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jeisson.pizzeria.persistence.entity.orderitem.OrderItemData;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -35,11 +36,12 @@ public class OrderData {
     @Column(length = 200)
     private String additionalInfo;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_customer",
             referencedColumnName = "id", insertable = false, updatable = false)
+    @JsonIgnore
     private CustomerData customer;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
     private List<OrderItemData> items;
 }

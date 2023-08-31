@@ -1,5 +1,6 @@
 package com.jeisson.pizzeria.persistence.entity.orderitem;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jeisson.pizzeria.persistence.entity.OrderData;
 import com.jeisson.pizzeria.persistence.entity.PizzaData;
 import jakarta.persistence.*;
@@ -39,6 +40,7 @@ public class OrderItemData {
     @ManyToOne
     @JoinColumn(name = "id_order",
             referencedColumnName = "id", insertable = false, updatable = false)
+    @JsonIgnore
     private OrderData order;
 
 }
