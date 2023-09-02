@@ -28,6 +28,15 @@ public class PizzaService {
         return this.pizzaRepository.existsById(id);
     }
 
+    public List<PizzaData> findAllByAvailable(){
+        return this.pizzaRepository.findAllByAvailableTrueOrderByPrice();
+    }
+
+    public PizzaData findByName(String name){
+        return this.pizzaRepository.findByAvailableTrueAndNameIgnoreCase(name)
+                .orElseThrow(() -> new RuntimeException("Pizza not found"));
+    }
+
     public void deleteById(Integer id){
         this.pizzaRepository.deleteById(id);
     }
